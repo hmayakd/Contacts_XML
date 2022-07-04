@@ -34,8 +34,10 @@
             this.tBAge = new System.Windows.Forms.TextBox();
             this.tBFirstName = new System.Windows.Forms.TextBox();
             this.tBLastName = new System.Windows.Forms.TextBox();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dGVContacts = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVContacts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +74,7 @@
             this.tBAge.Name = "tBAge";
             this.tBAge.Size = new System.Drawing.Size(100, 20);
             this.tBAge.TabIndex = 3;
+            this.tBAge.Click += new System.EventHandler(this.tB_Click);
             // 
             // tBFirstName
             // 
@@ -79,6 +82,7 @@
             this.tBFirstName.Name = "tBFirstName";
             this.tBFirstName.Size = new System.Drawing.Size(100, 20);
             this.tBFirstName.TabIndex = 4;
+            this.tBFirstName.Click += new System.EventHandler(this.tB_Click);
             // 
             // tBLastName
             // 
@@ -86,16 +90,17 @@
             this.tBLastName.Name = "tBLastName";
             this.tBLastName.Size = new System.Drawing.Size(100, 20);
             this.tBLastName.TabIndex = 5;
+            this.tBLastName.Click += new System.EventHandler(this.tB_Click);
             // 
-            // btnCreate
+            // btnAdd
             // 
-            this.btnCreate.Location = new System.Drawing.Point(231, 9);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(75, 23);
-            this.btnCreate.TabIndex = 6;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnAdd.Location = new System.Drawing.Point(231, 9);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dGVContacts
             // 
@@ -104,14 +109,37 @@
             this.dGVContacts.Name = "dGVContacts";
             this.dGVContacts.Size = new System.Drawing.Size(776, 327);
             this.dGVContacts.TabIndex = 7;
+            this.dGVContacts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVContacts_CellClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(231, 41);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(231, 73);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dGVContacts);
-            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tBLastName);
             this.Controls.Add(this.tBFirstName);
             this.Controls.Add(this.tBAge);
@@ -135,8 +163,10 @@
         private System.Windows.Forms.TextBox tBAge;
         private System.Windows.Forms.TextBox tBFirstName;
         private System.Windows.Forms.TextBox tBLastName;
-        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dGVContacts;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
